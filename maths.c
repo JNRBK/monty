@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 	unsigned int result = 0;
 
-	if ((*stack)->next == NULL)
+	if ((*stack)->next == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		free_mem(stack);
@@ -38,7 +38,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 	unsigned int result = 0;
 
-	if ((*stack)->next == NULL)
+	if ((*stack)->next == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		free_mem(stack);
@@ -97,7 +97,7 @@ void _mul(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 	unsigned int result = 0;
 
-	if ((*stack)->next == NULL)
+	if ((*stack)->next == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		free_mem(stack);
